@@ -4,11 +4,13 @@
   <remote  name="aosp"
            fetch=".."
            review="https://android-review.googlesource.com/" />
+  <remote  name="sola-android"
+           fetch="https://github.com/sola-dolphin1/" />
   <default revision="refs/tags/android-4.2.2_r1.2"
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="platform/build" groups="pdk" >
+  <project path="build" name="platform_build" remote="sola-android" revision="jb-4.2" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
@@ -199,7 +201,7 @@
   <project path="external/zlib" name="platform/external/zlib" groups="pdk" />
   <project path="external/zxing" name="platform/external/zxing" />
   <project path="frameworks/av" name="platform/frameworks/av" groups="pdk" />
-  <project path="frameworks/base" name="platform/frameworks/base" />
+  <project path="frameworks/base" name="platform_frameworks_base" remote="sola-android" revision="jb-4.2" />
   <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" />
   <project path="frameworks/compile/linkloader" name="platform/frameworks/compile/linkloader" groups="pdk" />
   <project path="frameworks/compile/llvm-ndk-cc" name="platform/frameworks/compile/llvm-ndk-cc" groups="pdk" />
@@ -257,7 +259,7 @@
   <project path="packages/apps/CellBroadcastReceiver" name="platform/packages/apps/CellBroadcastReceiver" />
   <project path="packages/apps/CertInstaller" name="platform/packages/apps/CertInstaller" />
   <project path="packages/apps/Contacts" name="platform/packages/apps/Contacts" />
-  <project path="packages/apps/DeskClock" name="platform/packages/apps/DeskClock" />
+  <project path="packages/apps/DeskClock" name="platform_packages_apps_DeskClock" remote="sola-android" revision="jb-4.2" />
   <project path="packages/apps/Email" name="platform/packages/apps/Email" />
   <project path="packages/apps/Exchange" name="platform/packages/apps/Exchange" />
   <project path="packages/apps/Gallery" name="platform/packages/apps/Gallery" />
@@ -275,7 +277,7 @@
   <project path="packages/apps/Protips" name="platform/packages/apps/Protips" />
   <project path="packages/apps/Provision" name="platform/packages/apps/Provision" />
   <project path="packages/apps/QuickSearchBox" name="platform/packages/apps/QuickSearchBox" />
-  <project path="packages/apps/Settings" name="platform/packages/apps/Settings" />
+  <project path="packages/apps/Settings" name="platform_packages_apps_settings" remote="sola-android" revision="jb-4.2" />
   <project path="packages/apps/SmartCardService" name="platform/packages/apps/SmartCardService" />
   <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" />
   <project path="packages/apps/SpareParts" name="platform/packages/apps/SpareParts" />
@@ -342,5 +344,6 @@
   <project path="system/vold" name="platform/system/vold" groups="pdk" />
   <project path="tools/build" name="platform/tools/build" groups="notdefault,tools" />
   <project path="tools/motodev" name="platform/tools/motodev" groups="notdefault,motodev" />
+  <project path="selfbuild/samsung/maguro" name="platform_selfbuild_samsung_maguro" remote="sola-android" revision="jb-4.2" />
 
 </manifest>
