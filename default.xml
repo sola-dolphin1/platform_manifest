@@ -10,7 +10,7 @@
            remote="aosp"
            sync-j="4" />
 
-  <project path="build" name="platform_build" remote="sola-android" revision="jb-4.2" groups="pdk" >
+  <project path="build" name="platform_aosp_build" remote="sola-android" revision="jb-4.2" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
   <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
